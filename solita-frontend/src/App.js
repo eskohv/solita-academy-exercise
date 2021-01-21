@@ -3,6 +3,7 @@ import nameService from "./services/nameService";
 import Names from "./components/Names"
 import Buttons from "./components/Buttons"
 import SearchForm from "./components/SearchForm"
+import "./index.css"
 
 const App = () => {
     const [names, setNames] = useState([])
@@ -46,7 +47,7 @@ const App = () => {
         const response = await nameService.getAll()
         await setNames(response.names)
 
-        const copy = [...names]
+        const copy = [...namesToShow]
         let total = 0
         copy.forEach(name => {
             total += name.amount
@@ -69,15 +70,32 @@ const App = () => {
         : names
 
   return (
-    <div className="App">
-
-        <Buttons handleDescending={handleDescending} handleAlphabetical={handleAlphabetical} handleTotal={handleTotal} />
-        <SearchForm filter={filter} inputHandler={inputHandler} />
-        <div style={showOnToggle}>
-            <p>{total}</p>
+    <div>
+        <div className="header">
+            Solita dev academy exercise by Eetu Kohvakka
         </div>
-        <Names names={namesToShow} style={hideOnToggle}/>
+
+        <div className="content">
+
+            <div className="nav">
+                <Buttons handleDescending={handleDescending} handleAlphabetical={handleAlphabetical} handleTotal={handleTotal} />
+                <SearchForm filter={filter} inputHandler={inputHandler} />
+            </div>
+
+            <div className="data">
+                <div style={showOnToggle}>
+                    <p>{total}</p>
+                </div>
+                <Names names={namesToShow} style={hideOnToggle}/>
+            </div>
+        </div>
+
+        <div className="footer">
+            <span>Source code can be found in <a href="https://github.com/eskohv/solita-academy-exercise">GitHub</a></span>
+            <span>Made by Eetu Kohvakka <br/> ekohvakka@gmail.com </span>
+        </div>
     </div>
+
   );
 }
 

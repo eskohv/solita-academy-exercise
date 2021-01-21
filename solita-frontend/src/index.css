@@ -1,13 +1,87 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-size: 15px;
+  font-family: Calibri, sans-serif;
+}
+.header {
+  position: sticky;
+  padding: 15px 15px;
+  background-color: #2d3436;
+  top: 0;
+  width: 100%;
+  color: white;
+  font-size: 24px;
+}
+
+.content {
+  background-color: #dfe6e9;
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.nav{
+  background-color: #636e72;
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  color: white;
+}
+
+.buttons {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #636e72;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid #2d3436;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: #00cec9;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 5px;
+}
+
+.data {
+  padding: 5px 5px 5px 5px;
+  font-size: 16px;
+  list-style-type: circle;
+}
+
+.footer {
+  background-color: #2d3436;
+  padding: 15px 15px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+a:visited {
+  color: white;
 }
